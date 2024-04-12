@@ -20,22 +20,23 @@ class OnBoardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-    }
-    private fun initialize(){
-        binding.vpOne.adapter= OnBoardViewPagerAdapter(this@OnBoardFragment)
         initialize()
-        setupListener()
-
     }
-    private  fun setupListener()= with(binding.vpOne){
-        binding.btnViewPager.setOnClickListener{
-         if (currentItem<3){
-             setCurrentItem(currentItem + 2, true)
-         }
-            if (currentItem<2){
-                setCurrentItem(currentItem + 1, true)
+    private fun initialize() {
+        binding.vpOne.adapter = OnBoardViewPagerAdapter(this@OnBoardFragment)
+        setupListener()
+    }
+
+    private fun setupListener() {
+        binding.btnViewPager.setOnClickListener {
+            val currentItem = binding.vpOne.currentItem
+            if (currentItem < 2) {
+                binding.vpOne.setCurrentItem(currentItem + 1, true)
+            } else {
+                binding.vpOne.setCurrentItem(0, true)
             }
         }
     }
+
 
 }

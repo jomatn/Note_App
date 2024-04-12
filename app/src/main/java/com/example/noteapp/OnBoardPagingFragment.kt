@@ -24,21 +24,30 @@ class OnBoardPagingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initialize()
     }
-    private fun initialize()= binding.apply{
-       when(requireArguments().getInt(ARG_ONBOARD_POSITION)){
-           0 -> {
-               tvTitle.text = "Очень удобный функционал;"
-           }
-           1->{
-               tvTitle.text = "Быстрый, качественный продукт"
-           }
-           2->{
-               tvTitle.text = "Куча функций и интересных фишек"
-           }
-       }
+
+    private fun initialize() {
+        val animationFileName = requireArguments().getString(ARG_ANIMATION_FILE_NAME)
+        binding.lottieAnimationView.setAnimation(animationFileName)
+        binding.lottieAnimationView.playAnimation()
+
+        when (requireArguments().getInt(ARG_ONBOARD_POSITION)) {
+            0 -> {
+                binding.tvTitle.text = "Очень удобный функционал;"
+            }
+            1 -> {
+                binding.tvTitle.text = "Быстрый, качественный продукт"
+            }
+            2 -> {
+                binding.tvTitle.text = "Куча функций и интересных фишек"
+            }
+        }
     }
+
+
     companion object{
         const val ARG_ONBOARD_POSITION = "onBoard"
+        const val ARG_ANIMATION_FILE_NAME = "animationFileName"
     }
+
 }
 
