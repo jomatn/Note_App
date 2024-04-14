@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.noteapp.databinding.FragmentOnBoardBinding
 import com.example.noteapp.databinding.FragmentOnBoardPagingBinding
 
 class OnBoardPagingFragment : Fragment() {
@@ -26,19 +25,18 @@ class OnBoardPagingFragment : Fragment() {
     }
 
     private fun initialize() {
-        val animationFileName = requireArguments().getString(ARG_ANIMATION_FILE_NAME)
-        binding.lottieAnimationView.setAnimation(animationFileName)
-        binding.lottieAnimationView.playAnimation()
-
-        when (requireArguments().getInt(ARG_ONBOARD_POSITION)) {
+        when (requireArguments().getInt(ARG_ONBOARD_POSITION)){
             0 -> {
-                binding.tvTitle.text = "Очень удобный функционал;"
+                binding.tvOn.text = "Очень удобный функционал;"
+                binding.lottie.setAnimation(R.raw.Animation2)
             }
             1 -> {
-                binding.tvTitle.text = "Быстрый, качественный продукт"
+                binding.tvOn.text = "Быстрый, качественный продукт"
+                binding.lottie.setAnimation(R.raw.Animation3)
             }
             2 -> {
-                binding.tvTitle.text = "Куча функций и интересных фишек"
+                binding.tvOn.text = "Куча функций и интересных фишек"
+                binding.lottie.setAnimation(R.raw.Animation4)
             }
         }
     }
@@ -46,7 +44,7 @@ class OnBoardPagingFragment : Fragment() {
 
     companion object{
         const val ARG_ONBOARD_POSITION = "onBoard"
-        const val ARG_ANIMATION_FILE_NAME = "animationFileName"
+
     }
 
 }

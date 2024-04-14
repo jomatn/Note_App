@@ -23,17 +23,17 @@ class OnBoardFragment : Fragment() {
         initialize()
     }
     private fun initialize() {
-        binding.vpOne.adapter = OnBoardViewPagerAdapter(this@OnBoardFragment)
+        binding.viewPager2.adapter = OnBoardViewPagerAdapter(this@OnBoardFragment)
         setupListener()
     }
 
     private fun setupListener() {
-        binding.btnViewPager.setOnClickListener {
-            val currentItem = binding.vpOne.currentItem
+        binding.tvSend.setOnClickListener() {
+            val currentItem = binding.viewPager2.currentItem
             if (currentItem < 2) {
-                binding.vpOne.setCurrentItem(currentItem + 1, true)
+                binding.viewPager2.setCurrentItem(currentItem + 1, true)
             } else {
-                binding.vpOne.setCurrentItem(0, true)
+                binding.viewPager2.setCurrentItem(0, true)
             }
         }
     }
