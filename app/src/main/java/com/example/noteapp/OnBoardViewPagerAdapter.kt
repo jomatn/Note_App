@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.noteapp.OnBoardPagingFragment.Companion.ARG_ONBOARD_POSITION
+import com.example.noteapp.databinding.FragmentNoteBinding
 
 class OnBoardViewPagerAdapter (fragment: Fragment)
     : FragmentStateAdapter(fragment){

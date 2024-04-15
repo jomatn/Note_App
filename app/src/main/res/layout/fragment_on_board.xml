@@ -43,5 +43,6 @@
         app:tabBackground="@drawable/tab"
         app:tabGravity="center"
         app:tabIndicatorHeight="0dp"
-        app:tabMaxWidth="30dp" />
+        app:tabMaxWidth="30dp"
+        android:id="@+id/dots"/>
 </FrameLayout>

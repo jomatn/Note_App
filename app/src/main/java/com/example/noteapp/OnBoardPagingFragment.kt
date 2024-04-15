@@ -25,6 +25,7 @@ class OnBoardPagingFragment : Fragment() {
     }
 
     private fun initialize() {
+
         when (requireArguments().getInt(ARG_ONBOARD_POSITION)){
             0 -> {
                 binding.tvOn.text = "Очень удобный функционал;"
