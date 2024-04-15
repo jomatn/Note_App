@@ -17,13 +17,4 @@ class OnBoardViewPagerAdapter (fragment: Fragment)
         }
     }
 
-//    private fun getAnimationFileName(position: Int): String {
-//        return when (position) {
-//            0 -> "Animation - 1712835860849.json"
-//            1 -> "Animation - 2.json"
-//            2 -> "Animation - 1.json"
-//            else -> throw IllegalArgumentException("Invalid position: $position")
-//        }
-//    }
-
 }
