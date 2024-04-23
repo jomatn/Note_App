@@ -1,4 +1,4 @@
-package com.example.noteapp
+package com.example.noteapp.ui.fragment.onBoard
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
+import com.example.noteapp.R
+import com.example.noteapp.data.Pref
+import com.example.noteapp.ui.adapter.OnBoardViewPagerAdapter
 import com.example.noteapp.databinding.FragmentOnBoardBinding
 
 class OnBoardFragment : Fragment() {
@@ -27,6 +30,7 @@ class OnBoardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initialize()
         setupListener()
+
     }
 
     private fun initialize() {
@@ -47,7 +51,38 @@ class OnBoardFragment : Fragment() {
             }
         }
         binding.tvGetStarted.isVisible = false
+        findNavController().navigate(R.id.noteFragment)
 
+    }
+    private fun btnGetStarted() = with(binding) {
+        viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                when (position) {
+                    0 -> {
+                        tvSend.isVisible = true
+                        tvGetStarted.isVisible = false
+                    }
+
+                    1 -> {
+                        tvSend.isVisible = true
+                        tvGetStarted.isVisible = false
+                    }
+
+                    2 -> {
+                        tvSend.isVisible = false
+                        tvGetStarted.isVisible = true
+                    }
+                }
+                super.onPageSelected(position)
+            }
+        })
+    }
+
+    private fun openHome() {
+        Pref.isOnBoardShown = true
     }
 
 }
+
+
+

@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("androidx.navigation.safeargs.kotlin")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -54,5 +56,18 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
 
 //lottie
-    implementation ("com.airbnb.android:lottie:6.4.0")
+    implementation("com.airbnb.android:lottie:6.4.0")
+
+
+    //ROOM
+    val roomVersion = "2.6.1"
+    implementation("androidx.room:room-ktx:$roomVersion")
+    ksp("androidx.room:room-compiler:$roomVersion")
+
+//    //Firebase
+//    implementation(platform("com.google.firebase:firebase-bom:32.8.0"))
+//    implementation("com.google.firebase:firebase-analytics")
+//    implementation("com.google.firebase:firebase-auth")
+//    implementation("com.google.android.gms:play-services-auth:21.0.0")
+//
 }

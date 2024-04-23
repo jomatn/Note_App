@@ -1,10 +1,10 @@
-package com.geeks.noteapp.ui.activity
+package com.example.noteapp.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.example.noteapp.Pref
+import com.example.noteapp.data.Pref
 import com.example.noteapp.R
 import com.example.noteapp.databinding.ActivityMainBinding
 
