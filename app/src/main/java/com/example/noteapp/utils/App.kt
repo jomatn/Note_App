@@ -1,4 +1,4 @@
-package com.example.noteapp
+package com.example.noteapp.utils
 import AppDatabase
 import android.app.Application
 import androidx.room.Room
@@ -11,14 +11,13 @@ class App:Application() {
         sharedPreferences.unit(this)
         appDatabase = getInstance()
     }
-
-    private fun getInstance(): AppDatabase? {
+    fun getInstance(): AppDatabase? {
         if (appDatabase === null){
             appDatabase = applicationContext.let{
                 Room.databaseBuilder(
                     it,
                     AppDatabase:: class.java,
-                    "note.database"
+                    "noteDatabase"
                 ).fallbackToDestructiveMigration().allowMainThreadQueries().build()
             }
         }
